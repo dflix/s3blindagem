@@ -1,0 +1,105 @@
+/*global $, document, Chart, LINECHART, data, options, window*/
+$(document).ready(function () {
+
+   // 'use strict';
+
+    // Main Template Color
+    var brandPrimary = '#33b35a';
+
+
+    // ------------------------------------------------------- //
+    // Line Chart
+    // ------------------------------------------------------ //
+    var LINECHART = $('#lineCahrt');
+    var myLineChart = new Chart(LINECHART, {
+        type: 'line',
+        options: {
+            legend: {
+                display: false
+            }
+        },
+        data: {
+            labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul"],
+            datasets: [
+                {
+                    label: "Entradas",
+                    fill: true,
+                    lineTension: 0.3,
+                    backgroundColor: "rgba(77, 193, 75, 0.4)",
+                    borderColor: brandPrimary,
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    borderWidth: 1,
+                    pointBorderColor: brandPrimary,
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: brandPrimary,
+                    pointHoverBorderColor: "rgba(220,220,220,1)",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 0,
+                    data: [1200.00, 1640.00, 1200.00, 2200.00, 3500.00, 800.00, 1200.00],
+                    spanGaps: false
+                },
+                {
+                    label: "Saidas",
+                    fill: true,
+                    lineTension: 0.3,
+                    backgroundColor: "rgba(255,0,0,0.4)",
+                    borderColor: "rgba(255,255,0,1)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    borderWidth: 1,
+                    pointBorderColor: "rgba(255,255,0,1)",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(255,255,0,1)",
+                    pointHoverBorderColor: "rgba(255,255,0,1)",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: [900.00, 1200.00, 700.00, 950.00, 1900.00, 500.00, 2200.00],
+                    spanGaps: false
+                }
+            ]
+        }
+    });
+
+
+    // ------------------------------------------------------- //
+    // Pie Chart
+    // ------------------------------------------------------ //
+    var PIECHART = $('#pieChart');
+    var myPieChart = new Chart(PIECHART, {
+        type: 'doughnut',
+        data: {
+            labels: [
+                "First",
+                "Second",
+                "Third"
+            ],
+            datasets: [
+                {
+                    data: [300, 50, 100],
+                    borderWidth: [1, 1, 1],
+                    backgroundColor: [
+                        brandPrimary,
+                        "rgba(75,192,192,1)",
+                        "#FFCE56"
+                    ],
+                    hoverBackgroundColor: [
+                        brandPrimary,
+                        "rgba(75,192,192,1)",
+                        "#FFCE56"
+                    ]
+                }]
+        }
+    });
+
+});
